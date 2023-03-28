@@ -10,28 +10,23 @@ Date: March 1, 2023 -->
 <html lang="en">
 
 <head>
-  <title>Upload Play Example 1y</title>
+  <title>Upload Play Example 1ad</title>
 </head>
 
 <style>
   .form-container {
     display: flex;
-    align-items: flex-end;
+    align-items: last baseline;
     gap: 20px;
   }
 
-  .text-container {
-    display: flex;
-    align-items: self-end;
-  }
-
   h1 {
-    margin-bottom: 10;
+    margin-bottom: 0;
   }
 </style>
 
 <body>
-  // Upload the selected video to storage
+  <!-- Upload the selected video to storage -->
   <h1>Upload Video</h1>
   <form method="post" action="/upload" enctype="multipart/form-data">
     <input type="file" name="video" accept="video/mp4">
@@ -41,7 +36,7 @@ Date: March 1, 2023 -->
 
     <br />
 
-    // Transcode video to different resolutions and send to storage
+    <!-- Transcode video to different resolutions and send to storage -->
     <div class="form-container">
       <h1>Transcode Video</h1>
       <form method="post" action="/transcode">
@@ -49,7 +44,7 @@ Date: March 1, 2023 -->
       </form>
     </div>
 
-    // Delete videos from storage and clear videoCIDx variables
+    <!-- Delete videos from storage and clear videoCIDx variables -->
     <div class="form-container">
       <h1>Delete Video</h1>
       <form class="text-container" method="post" action="/delete">
@@ -57,7 +52,7 @@ Date: March 1, 2023 -->
       </form>
     </div>
 
-    // Populate videoCIDx variables with links to transcoded videos
+    <!-- Populate videoCIDx variables with links to transcoded videos -->
     <div class="form-container">
       <h1>Refresh</h1>
       <form method="get" action="/refresh">
@@ -65,7 +60,7 @@ Date: March 1, 2023 -->
       </form>
     </div>
 
-    // HTML video players
+    <!-- HTML video players -->
     <h1>1080p</h1>
     <video width="320" height="240" controls>
       <source src=<%=`/s5/blob/${videoCID1}?mediaType=video%2Fmp4` %> type="video/mp4">
@@ -99,6 +94,5 @@ Date: March 1, 2023 -->
     });
   }
 </script>
-
 
 </html>
